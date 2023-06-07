@@ -1,7 +1,7 @@
 <template>
     <div class="" style="padding-top: 80px">
         <div class="flex justify-center section1">
-            <h1 class="font-blod">
+            <h1 class="font-blod text-center">
                 Trouvez ici plusieurs offres dans différents domaines
             </h1>
         </div>
@@ -177,7 +177,7 @@ export default {
 
 .title-domaine {
     padding-top: 20px;
-    font-size: 38px;
+    font-size: 30px;
     font-weight: 600;
     animation: showTitle 0.5s ease-in-out forwards;
 }
