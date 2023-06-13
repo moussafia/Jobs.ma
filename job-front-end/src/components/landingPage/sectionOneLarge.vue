@@ -7,39 +7,53 @@
         </div>
         <div class="flex flex-col items-center">
             <div class="sweeper-title">
-                <div v-if="index===0">
+                <div v-if="index === 0">
                     <h1 class="text-center title-domaine text-green-500">
-                    Génie électrique et mécanique
+                        Génie électrique et mécanique
                     </h1>
                 </div>
-                <div v-if="index===1">
-                    <h1 class="text-center title-domaine text-blue-500">Information Technology IT</h1>
+                <div v-if="index === 1">
+                    <h1 class="text-center title-domaine text-blue-500">
+                        Information Technology IT
+                    </h1>
                 </div>
-                <div v-if="index===2">
-                    <h1 class="text-center title-domaine text-red-400">Domaine de la gestion </h1>
+                <div v-if="index === 2">
+                    <h1 class="text-center title-domaine text-red-400">
+                        Domaine de la gestion
+                    </h1>
                 </div>
             </div>
             <div class="flex pt-6 gap-2">
-                <button type="button" class="btn-sweaper rounded-full bg-green-500"></button>
-                <button type="button" class="btn-sweaper rounded-full bg-gray-500"></button>
-                <button type="button" class="btn-sweaper rounded-full bg-gray-500"></button>
+                <button type="button" class="btn-sweaper rounded-full" @click="changeIndex(0)"
+                :class="index==0?'bg-green-500':' bg-gray-500'"></button>
+                <button type="button" class="btn-sweaper rounded-full"
+                :class="index==1?'bg-blue-500':' bg-gray-500'" @click="changeIndex(1)"></button>
+                <button type="button" class="btn-sweaper rounded-full" 
+                :class="index==2?'bg-red-400':' bg-gray-500'" @click="changeIndex(2)"></button>
             </div>
-            <div class="sweeper">
+            <div class="sweeper" >
                 <div>
                     <div class="cards-sweapers sweeper1 flex">
-                        <div class="card showCards">
+                        <div class="card showCards" :key="index">
                             <img style="height: 100%; width: 100%" ref="imgSweaper1" />
                         </div>
                         <div class="flex justify-center crd2">
-                            <div class="card showCards">
-                                <img style="height: 100%; width: 100%" ref="imgSweaper2"/>
+                            <div class="card showCards" :key="index">
+                                <img style="height: 100%; width: 100%" ref="imgSweaper2" />
                             </div>
-                            <div class="relative flex justify-center" style="padding-top: 70px;
-                            padding-left:5px;padding-right: 66px;">
+                            <div class="relative flex justify-center" style="
+                  padding-top: 70px;
+                  padding-left: 5px;
+                  padding-right: 66px;
+                ">
                                 <a href="#notre-service">
-                                    <div
-                                        class="absolute icon-drop-down flex justify-center items-center px-2"
-                                        :class="index===0?'bg-green-500':index===1?'bg-blue-500':'bg-red-400'">
+                                    <div class="absolute icon-drop-down flex justify-center items-center px-2" :class="
+                      index == 0
+                        ? 'bg-green-500'
+                        : index === 1
+                        ? 'bg-blue-500'
+                        : 'bg-red-400'
+                    ">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke-width="1.5" stroke="currentColor" class="w-5 h-5 svg-icons">
                                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -48,16 +62,14 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="card showCards">
-                                    <img style="height: 100%; width: 100%" ref="imgSweaper3"/>
-                                </div>
-                            <div class="card showCards delayed">
-                                <img style="height: 100%; width: 100%" ref="imgSweaper4"/>
+                            <div class="card showCards" :key="index">
+                                <img style="height: 100%; width: 100%" ref="imgSweaper3" />
                             </div>
                         </div>
+                        <div class="card showCards delayed" :key="index">
+                                <img style="height: 100%; width: 100%" ref="imgSweaper4" />
+                            </div>
                     </div>
-                    <div v-if="index === 1"></div>
-                    <div v-if="index === 2"></div>
                 </div>
             </div>
         </div>
@@ -68,52 +80,52 @@ export default {
     data() {
         return {
             cards: [{
-                imgSource:[
-                    'energie.jpg',
-                    'automatisation.jpg',
-                    'electronique.jpg',
-                    'Fabrication-mécanique.jpg',
-                ],
-            }, 
-            {
-                imgSource:[
-                    'it1.jpg',
-                    'it2.jpg',
-                    'it3.jpg',
-                    'it4.jpg',
-                ],
-            },
-            {
-                imgSource:[
-                    'gestion1.jpg',
-                    'gestion2.jpg',
-                    'gestion3.jpg',
-                    'gestion4.jpg',
-                ],
-            }],
-            index: 0
+                    imgSource: [
+                        "energie.jpg",
+                        "automatisation.jpg",
+                        "electronique.jpg",
+                        "Fabrication-mécanique.jpg",
+                    ],
+                },
+                {
+                    imgSource: ["it1.jpg", "it2.jpg", "it3.jpg", "it4.jpg"],
+                },
+                {
+                    imgSource: [
+                        "gestion1.jpg",
+                        "gestion2.jpg",
+                        "gestion3.jpg",
+                        "gestion4.jpg",
+                    ],
+                },
+            ],
+            index: 0,
         };
     },
-    watch:{
-        index(){
-            this.imgSrcSweaper()
+    mounted() {
+
+        this.imgSrcSweaper();
+        setInterval(()=>{
+            this.index=(this.index<2)?this.index+1:0;
+            console.log(this.index);
+            },6000)
+    },
+    updated(){
+        this.imgSrcSweaper()
+    },
+    methods: {
+        imgSrcSweaper() {
+            const imgSrc = this.cards[this.index].imgSource;
+            this.$refs.imgSweaper1.src = '../../src/assets/image/landingPage/' + imgSrc[0];
+            this.$refs.imgSweaper2.src = '../../src/assets/image/landingPage/' + imgSrc[1];
+            this.$refs.imgSweaper3.src = '../../src/assets/image/landingPage/' + imgSrc[2];
+            this.$refs.imgSweaper4.src = '../../src/assets/image/landingPage/' + imgSrc[3];
+
+        },
+        changeIndex(i){
+            this.index=i;
         }
     },
-    methods:{
-        imgSrcSweaper(){
-            // if(this.index===0){
-                // const imgSrc=this.cards[this.index].imgSource
-                console.log('gggg');
-            //    this.refs.imgSweaper1.src='../../assets/image/landingPage/${imgSrc}'
-            // }else if(this.index===1){
-            //     const imgSrc=this.cards[this.index].imgSource
-            //    this.refs.imgSweaper1.src='../../assets/image/landingPage/${imgSrc}'
-            // }else if(this.index==2){
-            //     const imgSrc=this.cards[this.index].imgSource
-            //    this.refs.imgSweaper1.src='../../assets/image/landingPage/${imgSrc}'
-            // }
-        }
-    }
 };
 </script>
 <style scoped>
@@ -198,7 +210,6 @@ export default {
     cursor: pointer;
     z-index: 14 !important;
     border-radius: 100%;
-    background-color: green;
     width: 45px;
     height: 45px;
     margin-left: 10px;

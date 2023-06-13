@@ -14,19 +14,23 @@
                     <button class="btn-connecter"
                     data-modal-target="seconnecterModal" data-modal-toggle="seconnecterModal">Log IN</button>
                     <div class="module-border-wrap">
-                        <a href="#" class="btn-signUp">sign Up</a>
+                        <a class="btn-signUp" 
+                        data-modal-target="signUPModal" data-modal-toggle="signUPModal">sign Up</a>
                     </div>
                 </div>
             </div>
         </nav>
         <fromSignIn/>
+        <fromSignUP/>
 </template>
 <script>
 import fromSignIn from './forms/signIn.vue'
+import fromSignUP from './forms/signUP.vue'
 export default{
     name: 'navBar',
     components: {
-        fromSignIn: fromSignIn
+        fromSignIn: fromSignIn,
+        fromSignUP: fromSignUP
     }
 }
 </script>
@@ -91,7 +95,7 @@ nav {
     font-size: 14px;
     font-weight:600;
     letter-spacing: 1.3px;
-
+    cursor: pointer;
 }
 .btn-signUp:hover{
     color: white;
