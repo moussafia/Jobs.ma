@@ -1,9 +1,9 @@
 <template>
-  <div class="sign-up">
+  <div class="sign-up" id="sign-up">
     <div class="back" style=""></div>
     <div class="w-full h-full content">
       <p>Inscrivez-vous pour postuler à des offres</p>
-      <a href="#nav">
+      <a href="#nav" @click="handleScroll">
         <div
           class="absolute rounded-full px-4 py-3 flex justify-center items-center px-2"
           style="background: #9c0343"
@@ -20,7 +20,7 @@
       >
         <img src="../../assets/image/landingPage/logo.png" class="py-1" />
         <h1>Bienvenue sur jobs.ma !</h1>
-        <p>Lorem ipsum dolor sit amet consectetur.</p>
+        <p class="text-center">Trouvez ici toutes les offres d'emploi <br> qui vous conviennent.</p>
         <div class="flex flex-col items-start">
           <label for="">First name</label>
           <input type="text" placeholder="First name" />
@@ -38,6 +38,16 @@
     </div>
   </div>
 </template>
+<script>
+import smoothScroll from "../../assets/js/index.js";
+export default {
+  methods: {
+        handleScroll(event){
+            smoothScroll(event)
+        }
+    }
+}
+</script>
 <style>
 .sign-up{
   width:100vw;

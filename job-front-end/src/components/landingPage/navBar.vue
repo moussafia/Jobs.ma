@@ -6,9 +6,9 @@
     </div>
     <div class="flex items-center items-nav-left">
       <div class="flex items-center" id="items-nav">
-        <a href="#propos">À propos</a>
+        <a href="#propos" @click="handleScroll">À propos</a>
         <a href="">Jobs</a>
-        <a href="#notre-service">Notre service</a>
+        <a href="#notre-service" @click="handleScroll">Notre service</a>
       </div>
       <div class="gap-2">
         <button
@@ -19,12 +19,7 @@
           Log IN
         </button>
         <div class="module-border-wrap">
-          <a
-            class="btn-signUp"
-            data-modal-target="signUPModal"
-            data-modal-toggle="signUPModal"
-            >sign Up</a
-          >
+          <a class="btn-signUp" href="#sign-up" @click="handleScroll">sign Up</a>
         </div>
       </div>
     </div>
@@ -34,13 +29,17 @@
 </template>
 <script>
 import fromSignIn from "./forms/signIn.vue";
-import fromSignUP from "./forms/signUP.vue";
+import smoothScroll from "../../assets/js/index.js";
 export default {
   name: "navBar",
   components: {
     fromSignIn: fromSignIn,
-    fromSignUP: fromSignUP,
   },
+  methods: {
+        handleScroll(event){
+            smoothScroll(event)
+        }
+    }
 };
 </script>
 <style scoped>

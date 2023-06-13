@@ -43,12 +43,6 @@ class UserController extends Controller
         $user->photo = 'anonymous.jpg';
         $user->cover = 'coverture_anonyme.png';
         $user->save();
-        $ScoerUser = new Score;
-        $ScoerUser->score = 1000;
-        $ScoerUser->user_id = $user->id;
-        $ScoerUser->save();
-        $role = Role::findByName('User');
-        $user->assignRole($role);
         try {
             $token = JWTAuth::attempt(['email' => $request->email, 'password' => $request->password]);
             $cookie = cookie('jwt_token', $token, config('jwt.ttl'), null, null, false, false);
