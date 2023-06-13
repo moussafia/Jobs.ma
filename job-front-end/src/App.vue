@@ -4,6 +4,9 @@
 <script setup>
 
 </script>
-<style scoped>
-
+<style>
+html, body{
+  overflow-x: hidden !important;
+  box-sizing: border-box;
+}
 </style>

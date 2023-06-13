@@ -1,5 +1,5 @@
 <template>
-    <div class="" style="padding-top: 80px">
+    <div class="" id="sectionLargeOne" style="padding-top: 80px">
         <div class="flex justify-center section1">
             <h1 class="font-blod text-center">
                 Trouvez ici plusieurs offres dans différents domaines
@@ -128,7 +128,10 @@ export default {
     },
 };
 </script>
-<style scoped>
+<style>
+#sectionLargeOne{
+    overflow: hidden !important;
+}
 .section1 h1 {
     font-size: 38px;
     font-weight: 600;
