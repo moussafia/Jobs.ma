@@ -6,9 +6,9 @@
     </div>
     <div class="flex items-center items-nav-left">
       <div class="flex items-center" id="items-nav">
-        <a href="">À propos</a>
+        <a href="#propos">À propos</a>
         <a href="">Jobs</a>
-        <a href="">Notre service</a>
+        <a href="#notre-service">Notre service</a>
       </div>
       <div class="gap-2">
         <button

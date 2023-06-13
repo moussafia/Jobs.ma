@@ -46,6 +46,7 @@
   background-size: cover;
   background-position: center top;
   position:relative;
+  z-index: 9999;
  }
  .sign-up .back{
   height:100%;

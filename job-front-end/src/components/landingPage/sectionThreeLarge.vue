@@ -1,5 +1,5 @@
 <template>
-  <div class="sommes-nous">
+  <div class="sommes-nous" id="propos">
     <div class="text">
       <h1>Qui sommes-nous?</h1>
       <p>
