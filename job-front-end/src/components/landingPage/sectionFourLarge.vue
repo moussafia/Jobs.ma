@@ -14,41 +14,30 @@
           ></i>
         </div>
       </a>
-      <form
-        action=""
-        class="flex flex-col items-center justify-center form-sign-up"
-      >
-        <img src="../../assets/image/landingPage/logo.png" class="py-1" />
-        <h1>Bienvenue sur jobs.ma !</h1>
-        <p class="text-center">Trouvez ici toutes les offres d'emploi <br> qui vous conviennent.</p>
-        <div class="flex flex-col items-start">
-          <label for="">First name</label>
-          <input type="text" placeholder="First name" />
-          <label for="">Last name</label>
-          <input type="text" placeholder="Last name" />
-          <label for="">Email</label>
-          <input type="email" placeholder="email" />
-          <label for="">Password</label>
-          <input type="password" placeholder="Password" />
-          <label for="">Confirmer password</label>
-          <input type="password" placeholder="Confirmer password" />
-        </div>
-        <a href="" class="inscrire">S'inscrire</a>
-      </form>
+      <signup/>
     </div>
   </div>
 </template>
 <script>
 import smoothScroll from "../../assets/js/index.js";
+import signup from "./forms/signUP.vue"
 export default {
-  methods: {
+  components:{
+    signup: signup
+  },
+    methods: {
         handleScroll(event){
             smoothScroll(event)
         }
     }
 }
+// $('#form-sign-up').parsley();
+
 </script>
 <style>
+.parsley-errors-list {
+  color: red; 
+}
 .sign-up{
   width:100vw;
   height:130vh;
@@ -85,45 +74,5 @@ export default {
   overflow-wrap: break-word;
   padding: 21px 29px 0 39px;
   width: 40%;
-}
-.form-sign-up{
-background:#fff;
-border-radius:46px;
-color:#000;
-padding: 67px 66px 57px 77px;
-height:100%;
-z-index:3;
-}
-.form-sign-up img{
-  height: 61px;
-  width: 64px;
-  border-radius:50%
-}
-.form-sign-up label{
-  text-align:start;
-  padding: 15px 0 4px 10px;
-  font-size: 14px;  
-}
-.form-sign-up input{
-  padding: 14px 70px 13px 12px;
-  border-radius: 17px;
-  border-width: 2.9px;
-  border-color: #9ea2a7;
-}
-.form-sign-up .inscrire{
-  background-image: linear-gradient(to right, #a61a71, #e02b60);
-  border-radius: 20px; 
-  padding: 8px 16px;
-  border: none;
-  color: white;
-  font-size: 14px;
-  font-weight:600;
-  letter-spacing: 1.3px;
-  width:85%;
-  text-align:center;
-  margin-top:8px;
-}
-.form-sign-up .inscrire:hover{
-  background-image: linear-gradient(to right, #6a164a, #a43757);
 }
 </style>

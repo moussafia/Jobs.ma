@@ -19,7 +19,9 @@
           Log IN
         </button>
         <div class="module-border-wrap">
-          <a class="btn-signUp" href="#sign-up" @click="handleScroll">sign Up</a>
+          <a class="btn-signUp" href="#sign-up" @click="handleScroll"
+            >sign Up</a
+          >
         </div>
       </div>
     </div>
@@ -36,11 +38,12 @@ export default {
     fromSignIn: fromSignIn,
   },
   methods: {
-        handleScroll(event){
-            smoothScroll(event)
-        }
-    }
+    handleScroll(event) {
+      smoothScroll(event);
+    },
+  }
 };
+
 </script>
 <style scoped>
 .logo-color {

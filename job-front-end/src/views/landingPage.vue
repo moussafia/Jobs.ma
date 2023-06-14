@@ -24,7 +24,7 @@ export default {
     sectionThree: sectionThree,
     sectionFourLarge: sectionFourLarge,
     Footer: Footer
-  },
+  }
 };
 </script>
 <style>

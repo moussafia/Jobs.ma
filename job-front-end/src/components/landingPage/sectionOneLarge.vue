@@ -134,7 +134,6 @@ export default {
     this.imgSrcSweaper();
     setInterval(() => {
       this.index = this.index < 2 ? this.index + 1 : 0;
-      console.log(this.index);
     }, 6000);
   },
   updated() {
