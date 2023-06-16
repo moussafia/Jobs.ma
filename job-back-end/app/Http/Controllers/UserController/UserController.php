@@ -25,8 +25,6 @@ class UserController extends Controller
     }
     public function registrer(Request $request)
     {
-        $csrfToken = $request->input('_token');
-        return response()->json($csrfToken);
         $validateData = $request->validate([
             'first_name' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z]*$/'],
             'last_name' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z]*$/'],
