@@ -1,11 +1,19 @@
 // import Vue from 'vue'
 import { createWebHistory,createRouter } from 'vue-router'
 import LandingPage from './views/landingPage.vue'
-const routes=[{
+import dashboardAdmin from './views/dashboardAdmin.vue'
+const routes=[
+//     {
+//     path:'',
+//     name: 'LandingPage',
+//     component: LandingPage,
+// },
+{
     path:'',
-    name: 'LandingPage',
-    component: LandingPage,
-}]
+    name: 'dashboardAdmin',
+    component: dashboardAdmin,
+},
+]
 const router=createRouter({
     history: createWebHistory(),
     routes

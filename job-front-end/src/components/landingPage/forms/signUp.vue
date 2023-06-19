@@ -57,8 +57,7 @@
   </form>
 </template>
 <script>
-import fetchCsrfToken from '../../../assets/js/x-csrf.js'
-import axios from "axios";
+import api from '../../../assets/js/api.js'
 export default {
   data() {
     return {
@@ -67,16 +66,13 @@ export default {
       email: "",
       password: "",
       password_confirmation: "",
-      csrf_token: "",
     };
   },
-  mounted() {
-    this.csrf_token=fetchCsrfToken();
-    console.log(this.csrf_token);
+  created() {
+    console.log(api);
   },
   methods: {
     async submitForm() {
-      await fetchCsrfToken();
       const userData = {
         first_name: this.first_name,
         last_name: this.last_name,
@@ -85,14 +81,9 @@ export default {
         password_confirmation: this.password_confirmation,
       };
       try {
-        const response = await axios.post(
-          "http://127.0.0.1:8000/api/auth/register",
-          userData,
-          {
-            headers: {
-              "X-CSRF-TOKEN": this.csrf_token,
-            },
-          }
+        const response = await api.post(
+          "auth/register",
+          userData
         );
         console.log(response.data);
       } catch (error) {
