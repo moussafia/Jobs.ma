@@ -1,5 +1,5 @@
 <template>
-  <section id="sideBar">
+  <section id="sideBar" :class="{'active': isOpen }">
     <div class="logo">
       <img src="../../assets/image/jobs/logo.png" />
       <h1>Jobs <sup>.ma</sup></h1>
@@ -27,6 +27,16 @@
     </div>
   </section>
 </template>
+<script>
+export default{
+  props:{
+    isOpen:{
+      type: Boolean,
+      required:true
+    }
+  }
+}
+</script>
 <style>
 #sideBar {
   background: #111827;
@@ -98,6 +108,11 @@
   }
   #sideBar.active{
     left: 0px;
+  }
+  #sideBar.active~#interface{
+    width: calc(100%- 270px);
+    margin-left: 270px;
+    transition: 0.3s ease;
   }
 }
 </style>

@@ -68,9 +68,9 @@
 </template>
 <script>
 export default{
-    method:{
+    methods:{
         toggleSideBar(){
-            
+            this.$emit('toggleSideBar');
         }
     }
 }
@@ -82,7 +82,7 @@ export default{
   justify-content: space-between;
   background: #fff;
   padding: 15px 15px 10px 30px;
-  border-bottom: 3px solid #594ef7;
+  border-bottom: 3px solid #e02b60;
   position: fixed;
   width: calc(100% - 300px);
 }
@@ -152,5 +152,13 @@ export default{
     padding: 30px 30px 0 30px;
     justify-content: flex-start;
   }
+}
+@media (max-width: 586px){
+  #interface nav {
+  padding: 15px;
+}
+#interface nav .search input {
+ width: 150px;
+}
 }
 </style>

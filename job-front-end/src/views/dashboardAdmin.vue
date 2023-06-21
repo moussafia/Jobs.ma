@@ -1,8 +1,8 @@
 <template>
   <div id="dashboardAdmin">
-    <sidBar />
+    <sidBar :isOpen="isSideBarOpen"/>
     <section id="interface">
-      <navBar />
+      <navBar @toggleSideBar="toggleSideBar"/>
       <homeAdmin />
     </section>
 
@@ -22,6 +22,16 @@ export default {
     homeAdmin: homeAdmin,
     btnAddjobs: btnAddjobs,
   },
+  data(){
+    return {
+      isSideBarOpen: false
+    }
+  },
+  methods: {
+    toggleSideBar(){
+      this.isSideBarOpen=!this.isSideBarOpen
+    }
+  }
 };
 </script>
 <style>
@@ -48,9 +58,11 @@ export default {
     width: 100%;
     margin-left: 0px;
     display: inline-block;
+    transition: 0.3s ease;
   }
   #interface nav {
     width: 100%;
   }
 }
+
 </style>

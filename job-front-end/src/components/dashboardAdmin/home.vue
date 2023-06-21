@@ -242,6 +242,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin-bottom: 10px;
 }
 .values .val-box i {
   font-size: 25px;
@@ -373,6 +374,7 @@ tbody tr .nomEntreprise a:hover {
     justify-content: flex-start;
   }
   .values .val-box{
+    margin-bottom: 0px;
     padding: 16px 20px;
     margin: 10px;
   }
@@ -384,6 +386,22 @@ tbody tr .nomEntreprise a:hover {
 table{
     width: 100%;
     border-collapse: collapse;
+}
+}
+@media (max-width: 586px){
+.i-name{
+  padding: 30px 15px 0 15px;
+}
+.values{
+  padding: 15px 15px 0 15px;
+}
+.values .val-box{
+  margin-bottom: 0px;
+  width: 100%;
+  margin: 8px 0;
+}
+.board{
+  margin: 30px 15px 30px 15px;
 }
 }
 </style>

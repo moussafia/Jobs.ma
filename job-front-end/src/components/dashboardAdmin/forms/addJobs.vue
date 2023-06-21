@@ -45,7 +45,7 @@
             <div class="flex items-center justify-center w-full">
               <label for="dropzone-file" class="dropzone-file-label">
                 <div class="upload-image">
-                  <img src="entr.png" class="py-1" />
+                  <img src="../../../assets/image/jobs/entr.png" class="py-1" />
                   <i
                     class="fa-duotone fa-cloud-arrow-up"
                     style="
@@ -66,37 +66,37 @@
             <label for="">Title</label>
             <input type="text" />
             <label for="">Nom de l'entreprise</label>
-            <select multiple="multiple" class="hi">
+            <select multiple="multiple" ref="SelectInput0">
               <option>youCode</option>
               <option>geeckfact</option>
               <option>free</option>
             </select>
           </div>
-          <div class="step w-full">
+          <div class="w-full step">
             <label for="">Description</label>
             <textarea name="description" id="description-add-job"></textarea>
           </div>
-          <div class="step w-full">
+          <div class="w-full">
             <label for="">Type contrat</label>
-            <select multiple="multiple" class="hi">
+            <select multiple="multiple" ref="SelectInput1">
               <option>cdi</option>
               <option>cdd</option>
               <option>freeLane</option>
             </select>
             <label for="">Localisation</label>
-            <select class="hi" multiple="multiple">
+            <select ref="SelectInput2" multiple="multiple">
               <option>safi</option>
               <option>white</option>
               <option>youssoufia</option>
             </select>
             <label for="">Domaine</label>
-            <select class="hi" multiple="multiple">
+            <select ref="SelectInput3" multiple="multiple">
               <option>genie electrique</option>
               <option>white</option>
               <option>genie mecanique</option>
             </select>
             <label for="">Technologie Requies</label>
-            <select class="hi" multiple="multiple">
+            <select ref="SelectInput4" multiple="multiple">
               <option>php</option>
               <option>js</option>
               <option>html</option>
@@ -129,12 +129,43 @@
     </div>
   </div>
 </template>
+<script>
+export default{
+  data(){
+    return {
+      selectInputs:[]
+    }
+  },
+  mounted(){
+    this.populateSelectInputs()
+    this.initializeSelect2()
+
+  },
+  methods:{
+    populateSelectInputs(){
+      this.selectInputs.push(this.$refs.SelectInput0);
+      this.selectInputs.push(this.$refs.SelectInput1);
+      this.selectInputs.push(this.$refs.SelectInput2);
+      this.selectInputs.push(this.$refs.SelectInput3);
+      this.selectInputs.push(this.$refs.SelectInput4);
+    },
+    initializeSelect2(){
+      this.selectInputs.forEach((ref)=>{
+        $(ref).select2({
+            tags: true,
+            tokenSeparators: [',', ' ']
+        })
+      })
+    }
+  }
+}
+</script>
 <style>
 #from-add-jobs {
   background: #fff;
   border-radius: 46px;
   color: #000;
-  padding: 14px 63px 40px 64px;
+  padding: 69px 63px 0px 64px;
   height: 100%;
 }
 #from-add-jobs img {
@@ -144,8 +175,8 @@
 }
 .dropzone-file-label {
   cursor: pointer;
-  height: 141px;
-  width: 173px;
+  height: 131px;
+  width: 163px;
 }
 .upload-image {
   position: relative;
@@ -192,13 +223,13 @@
 .select2-container--default
   .select2-selection--multiple
   .select2-selection__choice__display {
-  background: #111827 !important;
+    background-image: linear-gradient(to right, #a61a71, #e02b60);
   color: white;
 }
 .select2-container--default
   .select2-selection--multiple
   .select2-selection__choice {
-  background: #111827 !important;
+    background-image: linear-gradient(to right, #a61a71, #e02b60);
   color: white;
 }
 .select2-container--default
@@ -208,7 +239,7 @@
 }
 .select2-container--default
   .select2-results__option--highlighted.select2-results__option--selectable {
-  background: #74daec !important;
+    background-image: linear-gradient(to right, #a61a71, #e02b60);
 }
 #from-add-jobs .btn-form-add {
   background-image: linear-gradient(to right, #a61a71, #e02b60);
