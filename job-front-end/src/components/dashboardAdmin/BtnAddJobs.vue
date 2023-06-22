@@ -55,31 +55,6 @@ export default {
   color: white;
   font-weight: bold;
 }
-#container-add-jobs {
-  width: 40%;
-  height: 90vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
 
-.step-span {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbbbbb;
-  border: none;
-  border-radius: 50%;
-  display: inline-block;
-  opacity: 0.5;
-}
-.step-span.active {
-  opacity: 1;
-}
-.step-span.finish {
-  background-color: #04aa6d;
-}
-.step {
-  display: none;
-  margin-top: 92px;
-}
+
 </style>

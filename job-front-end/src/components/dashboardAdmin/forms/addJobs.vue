@@ -42,7 +42,7 @@
             ADD New Jobs!
           </h1>
           <div class="step flex flex-col justify-center items-start w-full">
-            <div class="flex items-center justify-center w-full">
+            <div class="flex items-center justify-center w-full mb-8">
               <label for="dropzone-file" class="dropzone-file-label">
                 <div class="upload-image">
                   <img src="../../../assets/image/jobs/entr.png" class="py-1" />
@@ -75,8 +75,10 @@
           <div class="w-full step">
             <label for="">Description</label>
             <textarea name="description" id="description-add-job"></textarea>
+            <label for="">Salaire(Optionnel)</label>
+            <input type="text" />
           </div>
-          <div class="w-full">
+          <div class="w-full mt-2 step">
             <label for="">Type contrat</label>
             <select multiple="multiple" ref="SelectInput1">
               <option>cdi</option>
@@ -102,27 +104,71 @@
               <option>html</option>
             </select>
           </div>
-          <div class="step w-full"><input type="text" />dgjdsgjsdmlkgj</div>
-          <div class="flex justify-end gap-2 items-center w-full">
-            <button
-              class="btn-form-add mx-2 previousBtn"
-              id="prevBtn"
-              onclick="nextPrev(-1)"
-            >
-              previous
-            </button>
-            <button
-              class="btn-form-add"
-              onclick="nextPrev(1)"
-              id="nextBtn"
-            ></button>
+          <div class="step w-full overflow-x-auto">
+            <div class="py-6" id="pargraphForms">
+              <div id="row1">
+                <label
+                  for="small-input"
+                  class="block mb-1 mt-1 text-sm font-medium text-gray-900 dark:text-white"
+                  >Question</label
+                >
+                <textarea
+                  name="paragraph[]"
+                  class="paragraphs w-full block rounded-lg overflow-x-hidden overflow-y-auto border border-gray-300 bg-gray-50"
+                >
+                </textarea>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <label class="font-medium text-sm text-gray-900 dark:text-white" style="padding-bottom: 16px;"
+                >Add Question</label
+              >
+              <button
+                class="flex rounded-lg text-white items-center justify-center addParagr"
+                type="button"
+                @click="add_parag();"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 4.5v15m7.5-7.5h-15"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
-          <!-- Circles which indicates the steps of the form: -->
-          <div style="text-align: center; margin-top: 40px">
-            <span class="step-span"></span>
-            <span class="step-span"></span>
-            <span class="step-span"></span>
-            <span class="step-span"></span>
+          <div class="flex flex-col w-full absolute btm-form">
+            <div class="flex justify-end gap-2 items-center w-full">
+              <button
+                class="btn-form-add mx-2 previousBtn"
+                ref="prevBtn"
+                @click.prevent="stepsAddJobShow(-1)"
+              >
+                previous
+              </button>
+              <button
+                class="btn-form-add"
+                @click.prevent="stepsAddJobShow(1)"
+                ref="nextBtn"
+              >
+                {{ this.TextbtnAddForm }}
+              </button>
+            </div>
+            <!-- Circles which indicates the steps of the form: -->
+            <div style="text-align: center; margin-top: 12px">
+              <span class="step-span"></span>
+              <span class="step-span"></span>
+              <span class="step-span"></span>
+              <span class="step-span"></span>
+            </div>
           </div>
         </form>
       </div>
@@ -130,42 +176,92 @@
   </div>
 </template>
 <script>
-export default{
-  data(){
+export default {
+  data() {
     return {
-      selectInputs:[]
-    }
+      selectInputs: [],
+      currentIndexStep: 0,
+      TextbtnAddForm: "Next",
+    };
   },
-  mounted(){
-    this.populateSelectInputs()
-    this.initializeSelect2()
-
+  mounted() {
+    this.populateSelectInputs();
+    this.initializeSelect2(), this.InitialSteps(this.currentIndexStep);
   },
-  methods:{
-    populateSelectInputs(){
+  methods: {
+    populateSelectInputs() {
       this.selectInputs.push(this.$refs.SelectInput0);
       this.selectInputs.push(this.$refs.SelectInput1);
       this.selectInputs.push(this.$refs.SelectInput2);
       this.selectInputs.push(this.$refs.SelectInput3);
       this.selectInputs.push(this.$refs.SelectInput4);
     },
-    initializeSelect2(){
-      this.selectInputs.forEach((ref)=>{
+    initializeSelect2() {
+      this.selectInputs.forEach((ref, index) => {
+        let maximumSelectionLength = null;
+        if (index == 0 || index == 1 || index == 3) {
+          maximumSelectionLength = 1;
+        } else {
+          maximumSelectionLength = null;
+        }
         $(ref).select2({
-            tags: true,
-            tokenSeparators: [',', ' ']
-        })
-      })
-    }
-  }
-}
+          tags: true,
+          tokenSeparators: [",", " "],
+          maximumSelectionLength: maximumSelectionLength,
+        });
+      });
+    },
+    InitialSteps(n) {
+      let DivSteps = document.getElementsByClassName("step");
+      DivSteps[this.currentIndexStep].style.display = "block";
+      if (n == 0) {
+        $(this.$refs.prevBtn)[0].style.display = "none";
+      } else {
+        $(this.$refs.prevBtn)[0].style.display = "inline";
+      }
+      if (n == DivSteps.length - 1) {
+        this.TextbtnAddForm = "ADD Job";
+      } else {
+        this.TextbtnAddForm = "Next";
+      }
+      this.fixStepIndicator(n);
+    },
+    stepsAddJobShow(n) {
+      let DivSteps = document.getElementsByClassName("step");
+      DivSteps[this.currentIndexStep].style.display = "none";
+      this.currentIndexStep = this.currentIndexStep + n;
+      //validation
+      if (this.currentIndexStep >= DivSteps.length) {
+        document.getElementById("from-add-jobs").submit();
+        this.currentIndexStep = 0;
+        return false;
+      } else {
+        this.InitialSteps(this.currentIndexStep);
+      }
+    },
+    fixStepIndicator(n) {
+      let stepsInd = document.getElementsByClassName("step-span");
+      stepsInd[n].classList.add("finish");
+      stepsInd[n].classList.add("active");
+      for (let i = n + 1; i < stepsInd.length; i++) {
+        stepsInd[i].classList.remove("finish");
+      }
+    },
+  },
+};
 </script>
 <style>
+#container-add-jobs {
+  width: 40%;
+  height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 #from-add-jobs {
   background: #fff;
   border-radius: 46px;
   color: #000;
-  padding: 69px 63px 0px 64px;
+  padding: 0 64px;
   height: 100%;
 }
 #from-add-jobs img {
@@ -223,13 +319,13 @@ export default{
 .select2-container--default
   .select2-selection--multiple
   .select2-selection__choice__display {
-    background-image: linear-gradient(to right, #a61a71, #e02b60);
+  background: #e02b60;
   color: white;
 }
 .select2-container--default
   .select2-selection--multiple
   .select2-selection__choice {
-    background-image: linear-gradient(to right, #a61a71, #e02b60);
+  background: #e02b60;
   color: white;
 }
 .select2-container--default
@@ -239,7 +335,7 @@ export default{
 }
 .select2-container--default
   .select2-results__option--highlighted.select2-results__option--selectable {
-    background-image: linear-gradient(to right, #a61a71, #e02b60);
+  background: #e02b60;
 }
 #from-add-jobs .btn-form-add {
   background-image: linear-gradient(to right, #a61a71, #e02b60);
@@ -252,7 +348,7 @@ export default{
   letter-spacing: 1.3px;
   width: 30%;
   text-align: center;
-  margin-top: 42px;
+  margin-top: 20px;
 }
 #from-add-jobs .btn-form-add:hover {
   background-image: linear-gradient(to right, #6a164a, #a43757);
@@ -263,5 +359,44 @@ export default{
 
 .previousBtn:hover {
   opacity: 0.8;
+}
+
+.step-span {
+  height: 14px;
+  width: 14px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+.active {
+  opacity: 1;
+}
+.finish {
+  background-color: #04aa6d;
+}
+.step {
+  display: none;
+}
+.btm-form {
+  bottom: 10px;
+  right: 34px;
+}
+.addParagr{
+  background-image: linear-gradient(to right, #6a164a, #a43757);
+    width: 18px;
+    height: 18px;
+}
+@media (max-width: 1700px) {
+  #container-add-jobs {
+    width: 90vh;
+  }
+}
+@media (max-width: 500px) {
+  #container-add-jobs {
+    width: 100%;
+  }
 }
 </style>
