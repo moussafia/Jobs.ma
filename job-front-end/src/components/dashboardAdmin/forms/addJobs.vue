@@ -105,28 +105,40 @@
             </select>
           </div>
           <div class="step w-full overflow-x-auto">
-            <div class="py-6" id="pargraphForms">
-              <div id="row1">
-                <label
-                  for="small-input"
-                  class="block mb-1 mt-1 text-sm font-medium text-gray-900 dark:text-white"
-                  >Question</label
-                >
+            <div class="py-6" id="pargraphForms" ref="pargraphForms">
+              <div v-for="(question, index) in questions" :key="index">
+                <div class="flex items-center">
+                  <label
+                    for="small-input"
+                    class="block mb-1 mt-1 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Question:</label
+                  >
+                  <button
+                    type="button"
+                    class="flex rounded-lg deletequestion items-center p-2 mt-2 w-5 h-5"
+                    @click="deletequestion(index)"
+                  >
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </div>
                 <textarea
-                  name="paragraph[]"
-                  class="paragraphs w-full block rounded-lg overflow-x-hidden overflow-y-auto border border-gray-300 bg-gray-50"
+                  v-model="question.text"
+                  class="paragraphs w-full block rounded-lg overflow-x-hidden overflow-y-auto bg-gray-50"
                 >
                 </textarea>
               </div>
             </div>
             <div class="flex items-center gap-2">
-              <label class="font-medium text-sm text-gray-900 dark:text-white" style="padding-bottom: 16px;"
-                >Add Question</label
+              <label
+                class="font-medium text-sm text-gray-900 dark:text-white"
+                style="padding-bottom: 16px"
+                >Add Questions(Optionnel)</label
               >
               <button
                 class="flex rounded-lg text-white items-center justify-center addParagr"
                 type="button"
-                @click="add_parag();"
+                @click="add_parag()"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -182,6 +194,7 @@ export default {
       selectInputs: [],
       currentIndexStep: 0,
       TextbtnAddForm: "Next",
+      questions: [],
     };
   },
   mounted() {
@@ -247,10 +260,20 @@ export default {
         stepsInd[i].classList.remove("finish");
       }
     },
+    add_parag() {
+      this.questions.push({ text: '' });
+    },
+    deletequestion(key) {
+    this.questions.splice(key,1)
+    },
   },
 };
 </script>
 <style>
+:root {
+  --brandColor: linear-gradient(to right, #a61a71, #e02b60);
+  --brandColorHover: linear-gradient(to right, #6a164a, #a43757);
+}
 #container-add-jobs {
   width: 40%;
   height: 90vh;
@@ -375,7 +398,7 @@ export default {
   opacity: 1;
 }
 .finish {
-  background-color: #04aa6d;
+  background-color: #e02b60;
 }
 .step {
   display: none;
@@ -384,10 +407,37 @@ export default {
   bottom: 10px;
   right: 34px;
 }
-.addParagr{
-  background-image: linear-gradient(to right, #6a164a, #a43757);
-    width: 18px;
-    height: 18px;
+.addParagr {
+  background-image: var(--brandColor);
+  width: 18px;
+  height: 18px;
+}
+.addParagr:hover {
+  background-image: var(--brandColorHover);
+}
+#pargraphForms {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 40vh;
+}
+#pargraphForms::-webkit-scrollbar {
+  width: 10px;
+  background: #fff;
+}
+#pargraphForms::-webkit-scrollbar-thumb {
+  background-color: #a43757;
+  height: 80px;
+  border-radius: 30px;
+}
+.deletequestion i {
+  background: var(--brandColor);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.deletequestion i:hover {
+  background: var(--brandColorHover);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 @media (max-width: 1700px) {
   #container-add-jobs {
