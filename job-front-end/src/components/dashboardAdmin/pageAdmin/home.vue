@@ -38,7 +38,7 @@
         <tbody>
           <tr>
             <td class="nomEntreprise">
-              <img src="../../assets/image/jobs/avatarEntre.png" alt="" />
+              <img src="../../../assets/image/jobs/avatarEntre.png" alt="" />
               <a href="#">
                 <h5>Geeck Fact</h5>
               </a>
@@ -59,7 +59,7 @@
           </tr>
           <tr>
             <td class="nomEntreprise">
-              <img src="../../assets/image/jobs/avatarEntre.png" alt="" />
+              <img src="../../../assets/image/jobs/avatarEntre.png" alt="" />
               <a href="#">
                 <h5>Geeck Fact</h5>
               </a>
@@ -80,7 +80,7 @@
           </tr>
           <tr>
             <td class="nomEntreprise">
-              <img src="../../assets/image/jobs/avatarEntre.png" alt="" />
+              <img src="../../../assets/image/jobs/avatarEntre.png" alt="" />
               <a href="#">
                 <h5>Geeck Fact</h5>
               </a>
@@ -101,7 +101,7 @@
           </tr>
           <tr>
             <td class="nomEntreprise">
-              <img src="../../assets/image/jobs/avatarEntre.png" alt="" />
+              <img src="../../../assets/image/jobs/avatarEntre.png" alt="" />
               <a href="#">
                 <h5>Geeck Fact</h5>
               </a>
@@ -122,7 +122,7 @@
           </tr>
           <tr>
             <td class="nomEntreprise">
-              <img src="../../assets/image/jobs/avatarEntre.png" alt="" />
+              <img src="../../../assets/image/jobs/avatarEntre.png" alt="" />
               <a href="#">
                 <h5>Geeck Fact</h5>
               </a>
@@ -143,7 +143,7 @@
           </tr>
           <tr>
             <td class="nomEntreprise">
-              <img src="../../assets/image/jobs/avatarEntre.png" alt="" />
+              <img src="../../../assets/image/jobs/avatarEntre.png" alt="" />
               <a href="#">
                 <h5>Geeck Fact</h5>
               </a>
@@ -164,7 +164,7 @@
           </tr>
           <tr>
             <td class="nomEntreprise">
-              <img src="../../assets/image/jobs/avatarEntre.png" alt="" />
+              <img src="../../../assets/image/jobs/avatarEntre.png" alt="" />
               <a href="#">
                 <h5>Geeck Fact</h5>
               </a>
@@ -185,7 +185,7 @@
           </tr>
           <tr>
             <td class="nomEntreprise">
-              <img src="../../assets/image/jobs/avatarEntre.png" alt="" />
+              <img src="../../../assets/image/jobs/avatarEntre.png" alt="" />
               <a href="#">
                 <h5>Geeck Fact</h5>
               </a>

@@ -5,17 +5,21 @@
       <h1>Jobs <sup>.ma</sup></h1>
     </div>
     <div class="items">
-      <li>
+      <router-link to="/dashboard">
+        <li :class="{'active-link' : isActiveLink('/dashboard')}">
         <i
           class="fa-duotone fa-chart-pie-simple"
           style="--fa-secondary-opacity: 1"
         ></i
-        ><a href="index.html">Dashboard</a>
+        >Dashboard
       </li>
-      <li>
+      </router-link>
+      <router-link to="/profile">
+      <li :class="{'active-link' : isActiveLink('/profile')}">
         <i class="fa-duotone fa-user" style="--fa-secondary-opacity: 1"></i
-        ><a href="profile.html">profile</a>
+        >profile
       </li>
+    </router-link>
       <li>
         <i class="fa-duotone fa-briefcase" style="--fa-secondary-opacity: 1"></i
         ><a href="#">jobs</a>
@@ -33,6 +37,11 @@ export default{
     isOpen:{
       type: Boolean,
       required:true
+    }
+  },
+  methods:{
+    isActiveLink(routePath){
+      return this.$route.path==routePath
     }
   }
 }
@@ -76,7 +85,7 @@ export default{
   background: #253047;
   cursor: pointer;
 }
-#sideBar .items li:nth-child(1) {
+.active-link {
   border-left: 2px solid #fff;
 }
 
@@ -94,7 +103,7 @@ export default{
 #sideBar .items li:hover a {
   color: #fff;
 }
-#sideBar .items li a {
+#sideBar .items a {
   text-decoration: none;
   color: rgb(134, 141, 151);
   font-weight: 300px;
