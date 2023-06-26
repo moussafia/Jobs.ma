@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="homeAdmin">
     <h3 class="i-name">Dashboard</h3>
     <div class="values">
       <div class="val-box">
@@ -220,21 +220,24 @@
   </div>
 </template>
 <style>
-.i-name {
+#homeAdmin{
+  min-height: 88vh;
+}
+#homeAdmin .i-name {
   color: #444a53;
   padding: 30px 30px 0 30px;
   font-size: 24px;
   font-weight: 700;
   margin-top: 70px;
 }
-.values {
+#homeAdmin .values {
   padding: 30px 30px 0 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
-.values .val-box {
+#homeAdmin .values .val-box {
   background: #fff;
   width: 235px;
   padding: 16px 20px;
@@ -244,7 +247,7 @@
   align-items: center;
   margin-bottom: 10px;
 }
-.values .val-box i {
+#homeAdmin .values .val-box i {
   font-size: 25px;
   width: 60px;
   height: 60px;
@@ -254,13 +257,13 @@
   color: #fff;
   margin-right: 15px;
 }
-.values .val-box:nth-child(1) i {
+#homeAdmin .values .val-box:nth-child(1) i {
   background: #7b74ec;
 }
-.values .val-box:nth-child(2) i {
+#homeAdmin .values .val-box:nth-child(2) i {
   background: #5c8af0;
 }
-.values .val-box:nth-child(3) i {
+#homeAdmin .values .val-box:nth-child(3) i {
   background: #74daec;
 }
 
@@ -268,34 +271,34 @@
   font-size: 18px;
   font-weight: 600;
 }
-.values .val-box span {
+#homeAdmin .values .val-box span {
   font-size: 15px;
   font-weight: 600;
 }
-.board {
+#homeAdmin .board {
   width: 94%;
   margin: 30px 0 30px 30px;
   overflow: auto;
   background: #fff;
   border-radius: 8px;
 }
-.board img {
+#homeAdmin .board img {
   width: 45px;
   height: 45px;
   object-fit: cover;
   border-radius: 50%;
   margin-right: 15px;
 }
-.board h5 {
+#homeAdmin .board h5 {
   font-weight: 600;
   font-size: 14px;
 }
-.board p {
+#homeAdmin .board p {
   font-weight: 400;
   font-size: 13px;
   color: #787d8d;
 }
-.board .nomEntreprise {
+#homeAdmin .board .nomEntreprise {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -322,30 +325,30 @@ tbody tr td {
 tbody tr .nomEntreprise a:hover {
   text-decoration: underline;
 }
-.active p {
+#homeAdmin .active p {
   background: #d7fada;
   padding: 2px 10px;
   display: inline-block;
   border-radius: 40px;
   color: #2b2b2b;
 }
-.UD a {
+#homeAdmin .UD a {
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
   display: block;
   row-gap: 10px;
 }
-.UD a:hover {
+#homeAdmin .UD a:hover {
   text-decoration: underline;
 }
-.UD a:nth-child(1) {
+#homeAdmin .UD a:nth-child(1) {
   color: #554cd1;
 }
-.UD a:nth-child(2) {
+#homeAdmin .UD a:nth-child(2) {
   color: #d14c7f;
 }
-.pagination {
+#homeAdmin .pagination {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -392,15 +395,15 @@ table{
 .i-name{
   padding: 30px 15px 0 15px;
 }
-.values{
+#homeAdmin .values{
   padding: 15px 15px 0 15px;
 }
-.values .val-box{
+#homeAdmin .values .val-box{
   margin-bottom: 0px;
   width: 100%;
   margin: 8px 0;
 }
-.board{
+#homeAdmin .board{
   margin: 30px 15px 30px 15px;
 }
 }

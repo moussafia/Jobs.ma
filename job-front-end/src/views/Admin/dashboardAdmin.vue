@@ -3,7 +3,6 @@
     <sidBar :isOpen="isSideBarOpen"/>
     <section id="interface">
       <navBar @toggleSideBar="toggleSideBar"/>
-      <!-- <homeAdmin/> -->
       <router-view></router-view>
     </section>
 
@@ -13,7 +12,6 @@
 <script>
 import sidBar from "../../components/dashboardAdmin/sideBar.vue";
 import navBar from "../../components/dashboardAdmin/navBar.vue";
-// import homeAdmin from "../../components/dashboardAdmin/pageAdmin/home.vue";
 import btnAddjobs from "../../components/dashboardAdmin/BtnAddJobs.vue";
 export default {
   name: "dashboardAdmin",
@@ -21,7 +19,6 @@ export default {
     sidBar: sidBar,
     navBar: navBar,
     btnAddjobs: btnAddjobs,
-    // homeAdmin: homeAdmin
   },
   data(){
     return {

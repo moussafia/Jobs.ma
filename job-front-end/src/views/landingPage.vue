@@ -5,7 +5,7 @@
     <sectionTwoLarge />
     <sectionThree />
     <sectionFourLarge/>
-    <Footer/>
+    <footerLandingPage/>
   </div>
 </template>
 <script>
@@ -14,7 +14,7 @@ import sectionOneLarge from "../components/landingPage/sectionOneLarge.vue";
 import sectionTwoLarge from "../components/landingPage/sectionTwoLarge.vue";
 import sectionThree from "../components/landingPage/sectionThreeLarge.vue";
 import sectionFourLarge from "../components/landingPage/sectionFourLarge.vue";
-import Footer from "../components/landingPage/footer.vue";
+import footerLandingPage from "../components/landingPage/footerLandingPage.vue";
 export default {
   name: "LandingPage",
   components: {
@@ -23,7 +23,7 @@ export default {
     sectionTwoLarge: sectionTwoLarge,
     sectionThree: sectionThree,
     sectionFourLarge: sectionFourLarge,
-    Footer: Footer
+    footerLandingPage: footerLandingPage
   }
 };
 </script>
