@@ -10,7 +10,7 @@
           <div class="definition-p flex justify-between">
             <div>
               <h1 class="name">mohammed mohammed</h1>
-              <p><i class="fa-solid fa-location-dot"></i> safi, Morocco</p>
+              <p><i class="fa-solid fa-location-dot"></i> <span> safi, Morocco</span></p>
             </div>
             <a href="" id="editProfile" title="Edit profile">
               <i class="fa-regular fa-pen-to-square" ></i>
@@ -91,8 +91,8 @@
   padding: 53px 6px 12px 45px;
 }
 #profileAdmin .profile-section .img {
-  height: 145px;
-  width: 240px;
+    height: 136px;
+    width: 136px;
   border-radius: 100%;
   display: flex;
   justify-content: center;
@@ -101,6 +101,8 @@
 }
 .profile-section .img img {
   object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 .definition-p {
   padding-top: 15px;
@@ -118,6 +120,7 @@
   font-size: 13px;
   padding-top: 14px;
   text-indent: 19px;
+  width: 90%;
 }
 #editProfile {
   color: #fff;
@@ -132,9 +135,33 @@
   background: hwb(208 2% 6%);
   cursor: pointer;
 }
+
 @media (max-width: 1112px) {
     #editProfile span {
   display: none;
+}
+#profileAdmin .profile-section .img {
+    height: 100px;
+    width: 151px;
+}
+}
+@media (max-width: 769px) {
+    #profileAdmin .definition-p h1 {
+    font-size: 13px;
+
+}
+#profileAdmin .profile-section {
+  width: 70%;
+  padding: 53px 6px 12px 0px;
+}
+#profileAdmin .cards-statistique p {
+    font-size: 12px;
+}
+#profileAdmin .child-profile .decription {
+    font-size: 11px;
+}
+#profileAdmin .definition-p p span{
+  font-size: 12px;
 }
 }
 </style>

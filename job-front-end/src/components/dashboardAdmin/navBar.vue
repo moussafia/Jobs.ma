@@ -42,17 +42,16 @@
         aria-labelledby="dropdownVousButton"
       >
         <li>
-          <a
-            href="#"
+          <router-link to="/dashboard"
             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-            >Dashboard</a
+            >Dashboard</router-link
           >
         </li>
         <li>
-          <a
+          <router-link to="/profile"
             href="#"
             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-            >profile</a
+            >profile</router-link
           >
         </li>
       </ul>
