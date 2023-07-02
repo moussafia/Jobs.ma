@@ -30,7 +30,7 @@ export default {
   right: 4%;
   cursor: pointer;
   border-radius: 30px;
-  background-color: green;
+  background-image: linear-gradient(to right,#a91b70, #d82862);;
   gap: 6px;
   display: flex;
   justify-content: center;
