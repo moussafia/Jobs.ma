@@ -6,13 +6,13 @@
       <div class="flex items-center justify-between py-4 dark:bg-gray-800">
         <div>
           <button
-            id="dropdownActionButton"
-            data-dropdown-toggle="dropdownAction"
+            id="dropdownSignalPostsButton"
+            data-dropdown-toggle="dropdownSignalPosts"
             class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
             type="button"
           >
             <span class="sr-only">filtrer posts</span>
-            posts
+            Action
             <svg
               class="w-3 h-3 ml-2"
               aria-hidden="true"
@@ -31,12 +31,12 @@
           </button>
           <!-- Dropdown menu -->
           <div
-            id="dropdownAction"
+            id="dropdownSignalPosts"
             class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
           >
             <ul
               class="py-1 text-sm text-gray-700 dark:text-gray-200"
-              aria-labelledby="dropdownActionButton"
+              aria-labelledby="dropdownSignalPostsButton"
             >
               <li>
                 <a
@@ -52,19 +52,12 @@
                   >moin signaler</a
                 >
               </li>
-              <li>
-                <a
-                  href="#"
-                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                  >Activate account</a
-                >
-              </li>
             </ul>
             <div class="py-1">
               <a
                 href="#"
                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                >Delete User</a
+                >Delete posts</a
               >
             </div>
           </div>

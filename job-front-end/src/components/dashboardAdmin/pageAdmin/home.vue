@@ -6,21 +6,28 @@
         <i class="fas fa-users"></i>
         <div>
           <h3>8</h3>
-          <span>new condidats</span>
+          <span>Nouveaux candidats</span>
         </div>
       </div>
       <div class="val-box">
-        <i class="fas fa-users"></i>
+        <i class="fa-solid fa-suitcase"></i>
         <div>
           <h3>8</h3>
-          <span>new condidats</span>
+          <span>Posts total</span>
         </div>
       </div>
       <div class="val-box">
-        <i class="fas fa-users"></i>
+        <i class="fa-sharp fa-solid fa-briefcase-blank"></i>
+                <div>
+          <h3>8</h3>
+          <span>Nouveaux posts</span>
+        </div>
+      </div>
+      <div class="val-box">
+        <i class="fa-solid fa-traffic-cone"></i>
         <div>
           <h3>8</h3>
-          <span>new condidats</span>
+          <span>Nombre de posts signalés</span>
         </div>
       </div>
     </div>
@@ -220,7 +227,7 @@
   </div>
 </template>
 <style>
-#homeAdmin{
+#homeAdmin {
   min-height: 88vh;
 }
 #homeAdmin .i-name {
@@ -233,7 +240,7 @@
 #homeAdmin .values {
   padding: 30px 30px 0 30px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -259,12 +266,17 @@
 }
 #homeAdmin .values .val-box:nth-child(1) i {
   background: #7b74ec;
+  width: 81px;
 }
 #homeAdmin .values .val-box:nth-child(2) i {
   background: #5c8af0;
 }
 #homeAdmin .values .val-box:nth-child(3) i {
   background: #74daec;
+}
+#homeAdmin .values .val-box:nth-child(4) i {
+  background: #ff5529;
+  width: 98px;
 }
 
 .values .val-box h3 {
@@ -371,40 +383,40 @@ tbody tr .nomEntreprise a:hover {
 .pagination a:hover:not(.active) {
   background-color: #ddd;
 }
-@media (max-width:769px){
-    .values {
+@media (max-width: 769px) {
+  .values {
     padding: 30px 30px 0 30px;
     justify-content: flex-start;
   }
-  .values .val-box{
+  .values .val-box {
     margin-bottom: 0px;
     padding: 16px 20px;
     margin: 10px;
   }
   .board {
     width: 92%;
-   padding: 0;
-    overflow-x: auto; 
-}
-table{
+    padding: 0;
+    overflow-x: auto;
+  }
+  table {
     width: 100%;
     border-collapse: collapse;
+  }
 }
-}
-@media (max-width: 586px){
-.i-name{
-  padding: 30px 15px 0 15px;
-}
-#homeAdmin .values{
-  padding: 15px 15px 0 15px;
-}
-#homeAdmin .values .val-box{
-  margin-bottom: 0px;
-  width: 100%;
-  margin: 8px 0;
-}
-#homeAdmin .board{
-  margin: 30px 15px 30px 15px;
-}
+@media (max-width: 586px) {
+  .i-name {
+    padding: 30px 15px 0 15px;
+  }
+  #homeAdmin .values {
+    padding: 15px 15px 0 15px;
+  }
+  #homeAdmin .values .val-box {
+    margin-bottom: 0px;
+    width: 100%;
+    margin: 8px 0;
+  }
+  #homeAdmin .board {
+    margin: 30px 15px 30px 15px;
+  }
 }
 </style>
