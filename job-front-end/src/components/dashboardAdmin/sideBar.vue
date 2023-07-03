@@ -24,10 +24,12 @@
         <i class="fa-duotone fa-briefcase" style="--fa-secondary-opacity: 1"></i
         ><a href="#">jobs</a>
       </li>
-      <li>
+      <router-link to="/signalisation">
+        <li :class="{'active-link' : isActiveLink('/signalisation')}">
         <i class="fa-duotone fa-bullhorn" style="--fa-secondary-opacity: 1"></i
         ><a href="#">Signalisation</a>
-      </li>
+        </li>
+      </router-link>
     </div>
   </section>
 </template>

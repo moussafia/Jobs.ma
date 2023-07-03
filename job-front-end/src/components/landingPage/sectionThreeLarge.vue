@@ -93,7 +93,7 @@
   padding: 4px 10px;
   border-radius: 104px;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1140px) {
   .sommes-nous {
     flex-wrap: wrap;
     height: 150vh;

@@ -31,7 +31,6 @@ export default {
         }
     }
 }
-// $('#form-sign-up').parsley();
 
 </script>
 <style>
@@ -75,4 +74,23 @@ export default {
   padding: 21px 29px 0 39px;
   width: 40%;
 }
+/* @media (max-width: 1140px) {
+  #sign-up {
+    flex-wrap: wrap;
+    height: 150vh;
+  }
+
+  #sign-up .text {
+    width: 100%;
+    position: absolute;
+    bottom: -6px;
+    padding: 30px;
+  }
+  #sign-up .text h1 {
+    font-size: 40px;
+  }
+  #sign-up .images .image-container {
+  margin-left: 0px;
+}
+} */
 </style>
