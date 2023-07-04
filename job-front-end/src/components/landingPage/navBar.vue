@@ -7,7 +7,9 @@
     <div class="flex items-center items-nav-left">
       <div class="flex items-center" id="items-nav">
         <a href="#propos" @click="handleScroll">À propos</a>
-        <a href="">Jobs</a>
+        <router-link to="/jobs">
+          <a href="">Jobs</a>
+        </router-link>
         <a href="#notre-service" @click="handleScroll">Notre service</a>
       </div>
       <div class="gap-2">

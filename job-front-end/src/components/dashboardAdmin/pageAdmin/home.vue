@@ -18,7 +18,7 @@
       </div>
       <div class="val-box">
         <i class="fa-sharp fa-solid fa-briefcase-blank"></i>
-                <div>
+        <div>
           <h3>8</h3>
           <span>Nouveaux posts</span>
         </div>
@@ -238,9 +238,9 @@
   margin-top: 70px;
 }
 #homeAdmin .values {
-  padding: 30px 30px 0 30px;
-  display: flex;
-  justify-content: space-around;
+  padding: 30px 29px 0 28px;
+    display: flex;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -250,6 +250,7 @@
   padding: 16px 20px;
   border-radius: 5px;
   display: flex;
+  height: 100px;
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 10px;
@@ -388,6 +389,12 @@ tbody tr .nomEntreprise a:hover {
     padding: 30px 30px 0 30px;
     justify-content: flex-start;
   }
+  #homeAdmin .values .val-box:nth-child(1) i {
+    width: 89px;
+  }
+  #homeAdmin .values .val-box:nth-child(4) i {
+    width: 100px;
+  }
   .values .val-box {
     margin-bottom: 0px;
     padding: 16px 20px;
@@ -417,6 +424,12 @@ tbody tr .nomEntreprise a:hover {
   }
   #homeAdmin .board {
     margin: 30px 15px 30px 15px;
+  }
+  #homeAdmin .values .val-box:nth-child(1) i {
+    width: 64px;
+  }
+  #homeAdmin .values .val-box:nth-child(4) i {
+    width: 64px;
   }
 }
 </style>

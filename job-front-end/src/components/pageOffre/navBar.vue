@@ -1,10 +1,14 @@
 <template>
-  <div>
-    <nav>
+    <div>
+        <nav>
+      <div class="flex justify-center items-center">
+        <img
+          src="../../assets/image/landingPage/logo.png"
+          style="height: 40px"
+        />
+        <h1 class="logo-color" style="">Jobs</h1>
+      </div>
       <div class="n1">
-        <div>
-          <i id="menu-bar" class="fas fa-bars" @click="toggleSideBar"></i>
-        </div>
         <div class="search">
           <i class="far fa-search"></i>
           <input type="text" placeholder="seach for a job" />
@@ -41,19 +45,14 @@
         class="py-2 text-sm text-gray-700 dark:text-gray-200"
         aria-labelledby="dropdownVousButton"
       >
-        <li>
-          <router-link to="/dashboard"
-            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-            >Dashboard</router-link
-          >
-        </li>
-        <li>
-          <router-link to="/profile"
+        <!-- <li>
+          <router-link
+            to="/profile"
             href="#"
             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
             >profile</router-link
           >
-        </li>
+        </li> -->
       </ul>
       <div class="py-2">
         <a
@@ -63,19 +62,23 @@
         >
       </div>
     </div>
-  </div>
+    </div>
 </template>
-<script>
-export default{
-    methods:{
-        toggleSideBar(){
-            this.$emit('toggleSideBar');
-        }
-    }
-}
-</script>
 <style>
-#interface nav {
+.logo-color {
+  font-weight: bold;
+  color: #e60023;
+  font-size: 22px;
+  padding-top: 4px;
+  letter-spacing: 1.3px;
+  background-image: linear-gradient(to right, #a61a71, #e02b60);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#jobs-home nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -83,40 +86,47 @@ export default{
   padding: 15px 15px 10px 30px;
   border-bottom: 3px solid #e02b60;
   position: fixed;
-  width: calc(100% - 242px);
+  width: 100%;
   z-index: 1;
 }
-#interface nav .search {
+#jobs-home nav .search {
+  display: flex;
+
   position: relative;
 }
-#interface nav .search i {
+#jobs-home nav .search i {
   margin-right: 14px;
-  padding: 14px 10px 10px 14px;
   position: absolute;
+  color: #aeb2ba;
+  top: 12px;
+  left: 12px;
 }
-#interface nav .search input {
+#jobs-home nav .search input {
   border: none;
   outline: none;
   font-size: 14px;
+  justify-content: flex-start;
+  align-items: center;
+  border: 2px solid #d7dbe6;
+  border-radius: 24px;
   height: 40px;
-  border-radius: 4px;
-  border: 1px solid #d7dbe6;
-  padding-left: 34px;
+  width: 61vw;
+  padding: 10px 10px 13px 33px;
 }
-#interface nav .profile {
+#jobs-home nav .profile {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-#interface nav .profile .notification {
+#jobs-home nav .profile .notification {
   margin-right: 20px;
   font-size: 20px;
   cursor: pointer;
 }
-#interface nav .profile .notification:hover {
+#jobs-home nav .profile .notification:hover {
   cursor: pointer;
 }
-#interface nav .profile img {
+#jobs-home nav .profile img {
   width: 25px;
   height: 25px;
   margin-left: 6px;
@@ -136,15 +146,15 @@ export default{
   margin-right: 20px;
 }
 @media (max-width: 769px) {
-  #menu-bar{
+  #menu-bar {
     display: initial;
   }
-  #interface {
+  #jobs-home {
     width: 100%;
     margin-left: 0px;
     display: inline-block;
   }
-  #interface .navigation {
+  #jobs-home .navigation {
     width: 100%;
   }
   .values {
@@ -152,12 +162,12 @@ export default{
     justify-content: flex-start;
   }
 }
-@media (max-width: 586px){
-  #interface nav {
-  padding: 15px;
-}
-#interface nav .search input {
- width: 150px;
-}
+@media (max-width: 586px) {
+  #jobs-home nav {
+    padding: 15px;
+  }
+  #jobs-home nav .search input {
+    width: 150px;
+  }
 }
 </style>

@@ -20,10 +20,12 @@
         >profile
       </li>
     </router-link>
+    <router-link to="/jobs">
       <li>
         <i class="fa-duotone fa-briefcase" style="--fa-secondary-opacity: 1"></i
         ><a href="#">jobs</a>
       </li>
+      </router-link>
       <router-link to="/signalisation">
         <li :class="{'active-link' : isActiveLink('/signalisation')}">
         <i class="fa-duotone fa-bullhorn" style="--fa-secondary-opacity: 1"></i
@@ -51,7 +53,7 @@ export default{
 <style>
 #sideBar {
   background: #111827;
-  width: 300px;
+  width: 242px;
   height: 100%;
   position: fixed;
   top: 0;

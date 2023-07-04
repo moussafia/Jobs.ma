@@ -46,7 +46,7 @@
   margin-top:38px ;
 }
 .form-log-in h1{
-  font-size: 29px;
+  font-size: 27px;
   font-weight: 600;
   padding-bottom: 12px;
 }
