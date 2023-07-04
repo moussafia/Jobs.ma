@@ -15,7 +15,12 @@
                 <span> safi, Morocco</span>
               </p>
             </div>
-            <a href="#edit-profile-section" @click="scrollDown" title="Edit profile" id="editProfile">
+            <a
+              href="#edit-profile-section"
+              @click="scrollDown"
+              title="Edit profile"
+              id="editProfile"
+            >
               <i class="fa-regular fa-pen-to-square"></i>
               <span>Edit profile</span></a
             >
@@ -37,7 +42,10 @@
         </div>
       </div>
     </div>
-    <form class="flex flex-wrap justify-center edit-profile-section w-full" ref="EPSection">
+    <form
+      class="flex flex-wrap justify-center edit-profile-section w-full"
+      ref="EPSection"
+    >
       <div class="flex items-center img-profile">
         <label for="dropzone-file" class="dropzone-profile-label">
           <div class="upload-image-profile">
@@ -69,17 +77,17 @@
   </div>
 </template>
 <script>
-export default{
+export default {
   methods: {
-    scrollDown(){
-      const targetDiv=this.$refs.EPSection;
+    scrollDown() {
+      const targetDiv = this.$refs.EPSection;
       window.scrollTo({
-        top:targetDiv.offsetTop,
-        behavior:'smooth'
-      })
-    }
-  }
-}
+        top: targetDiv.offsetTop,
+        behavior: "smooth",
+      });
+    },
+  },
+};
 </script>
 <style>
 #profileAdmin {
@@ -189,11 +197,12 @@ export default{
 }
 .edit-profile-section .inputs-edit-section label {
   padding-top: 10px;
-  padding-left: 15px;
+  padding-left: 11px;
+  font-size: 15px;
 }
 .edit-profile-section .inputs-edit-section input {
   width: 100%;
-  border-radius: 20px;
+  border-radius: 12px;
 }
 .edit-profile-section .img-profile {
   width: 95px;
@@ -222,7 +231,7 @@ export default{
 form .btn-edit-submit {
   margin-top: 38px;
   background: #0d8afb;
-    padding: 6px 36px;
+  padding: 6px 36px;
   border-radius: 50px;
   color: #fff;
   font-weight: 500;
@@ -264,9 +273,9 @@ form .btn-edit-submit:hover {
     font-size: 12px;
   }
   .edit-profile-section .inputs-edit-section {
-  width: 100%;
-  padding: 0;
-}
+    width: 100%;
+    padding: 0;
+  }
 }
 @media (max-width: 600px) {
   #profileAdmin .profile-section .img {
